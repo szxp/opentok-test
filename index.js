@@ -1,18 +1,28 @@
 
-
 "use strict";
 
 var fs = require('fs');  
 var path = require('path');  
 var https = require('https');
-var http = require("http");
-var url = require("url");
 var mime = require('mime');
 
 
 var staticBasePath = './www';
 
 var staticServe = function(req, res) {  
+    
+    // Website you wish to allow to connect
+    res.setHeader('Access-Control-Allow-Origin', '*');
+
+    // Request methods you wish to allow
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+    // Request headers you wish to allow
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+    // Set to true if you need the website to include cookies in the requests sent
+    // to the API (e.g. in case you use sessions)
+    res.setHeader('Access-Control-Allow-Credentials', true);    
     
     if (req.url === "/") {
       req.url = req.url + "index.html";
@@ -31,14 +41,13 @@ var staticServe = function(req, res) {
             return;
         }
 
-        if (fs.statSync(filename).isDirectory()) filename += '/index.html';
-
         fs.readFile(filename, "binary", function (err, file) {
             if (err) {
-                response.writeHead(500, {
+                console.log('Error: %s', err);
+                res.writeHead(500, {
                     "Content-Type": "text/plain"
                 });
-                res.write(err + "\n");
+                res.write("Server error\n");
                 res.end();
                 return;
             }

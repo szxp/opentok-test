@@ -1,22 +1,38 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>OpenTok test</title>
-  <link rel="stylesheet" href="css/client.css">
-</head>
-<body>
-  <button type="button" class="btn btnGreen" id="connectBtn" onclick="connect()">Connect</button>
-  <button type="button" class="btn" id="disconnectBtn" style="display: none" onclick="disconnect()">Disconnect</button>
-  <button type="button" class="btn btnGreen" id="publishBtn" style="display: none" onclick="publish()">Publish</button>
-  <button type="button" class="btn btnRed" id="unpublishBtn" style="display: none" onclick="unpublish()">Unpublish</button>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>OpenTok test</title>
+        <link rel="stylesheet" href="css/client.css">
+    </head>
+    <body>
+        <div class="toolbar">
+            <button type="button" class="btn btnGreen" id="connectBtn" onclick="connect()">
+                Enter the room
+            </button>
 
-  <div id="views"></div>
+            <button type="button" class="btn btnGrey" id="disconnectBtn" 
+                    style="display: none" onclick="disconnect()">
+                Leave the room
+            </button>
 
-  <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
-  <script src="js/client.js"></script>
-</body>
+            <button type="button" class="btn btnGreen" id="publishBtn" 
+                    style="display: none" onclick="publish()">
+                Publish me
+            </button>
+
+            <button type="button" class="btn btnRed" id="unpublishBtn" 
+                    style="display: none" onclick="unpublish()">
+                Unpublish me
+            </button>
+        </div>
+
+        <div id="views"></div>
+
+        <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
+        <script src="js/client.js"></script>
+    </body>
 </html>
 
 

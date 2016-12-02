@@ -41,16 +41,16 @@ function connect() {
             connected = false;
 
             if (event.reason === 'networkDisconnected') {
-                alert('Your network connection terminated.')
+                alert('Your network connection terminated.');
             }
         }
     });
 
 
     session.on("streamCreated", function (event) {
-        console.log("streamCreated")
+        console.log("streamCreated");
         //console.log(event)
-        remoteStreamId++
+        remoteStreamId++;
 
         var id = "stream" + remoteStreamId;
         var div = document.createElement("div");
@@ -93,7 +93,7 @@ function publish() {
     }
 
     var myView = document.createElement("div");
-    myView.id = "myView"
+    myView.id = "myView";
     prependChild(document.getElementById("views"), myView);
 
 

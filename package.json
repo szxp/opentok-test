@@ -1,7 +1,7 @@
 {
-  "name": "opentok-test",
+  "name": "video-chat-room",
   "version": "1.0.0",
-  "description": "Opentok WebRTC test in web client",
+  "description": "Video chat room based on WebRTC using OpenTok",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

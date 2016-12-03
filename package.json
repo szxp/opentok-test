@@ -1,7 +1,7 @@
 {
   "name": "video-chat-room",
   "version": "1.0.0",
-  "description": "Video chat room based on WebRTC using OpenTok",
+  "description": "Video chat room in browser based on WebRTC using OpenTok",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

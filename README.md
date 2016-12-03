@@ -1,4 +1,4 @@
-# opentok-test
+# Video chat room 
 Video chat room in browser based on WebRTC using [OpenTok](https://tokbox.com/developer/) (a.k.a. TokBox).
 
 ## Getting an API key, session ID, and token
